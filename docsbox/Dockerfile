@@ -10,6 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && \
         libreofficekit-dev \
         python3-dev \
         python3-pip \
+        python3-setuptools \
         git \
         locales && \
     apt-get -y clean && \
