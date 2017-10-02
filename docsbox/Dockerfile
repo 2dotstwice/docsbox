@@ -11,6 +11,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && \
         python3-dev \
         python3-pip \
         python3-setuptools \
+        build-essential \
+        autoconf \
+        libtool \
         git \
         locales && \
     apt-get -y clean && \
@@ -22,4 +25,4 @@ ENV LC_ALL en_US.UTF-8
 
 ADD . /home/docsbox
 WORKDIR /home/
-RUN pip3 install -r docsbox/requirements.txt
+RUN pip3 install wheel && pip3 install -r docsbox/requirements.txt
